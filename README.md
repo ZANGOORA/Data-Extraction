@@ -17,6 +17,9 @@
 - Manually converted excel sheets by sending screenshots to chat gpt (image to excel gpt used)
 ![image](https://github.com/user-attachments/assets/dc3f79f8-0a98-4ad1-ba42-5ae8424db33c)
 
+- Code using open ai api runs for only single pages
+![image](https://github.com/user-attachments/assets/ac073ef0-4338-4a3d-ad5f-c6eadede909c)
+
 
   ## Remarks
   - Manually data extraction is working, next step is to use opan ai's api key to automate the process.
