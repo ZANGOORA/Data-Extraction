@@ -1,0 +1,27 @@
+{
+  "dependencies": {
+    "openai": "^4.56.1"
+  },
+  "name": "dataextraction",
+  "version": "1.0.0",
+  "description": "- This repository contains Python code snippet for PDF scrapping",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZANGOORA/Data-Extraction.git"
+  },
+  "keywords": [
+    "data",
+    "extraction"
+  ],
+  "author": "Tushar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ZANGOORA/Data-Extraction/issues"
+  },
+  "homepage": "https://github.com/ZANGOORA/Data-Extraction#readme"
+}
