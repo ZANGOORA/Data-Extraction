@@ -21,18 +21,47 @@ def image_to_text(image_path):
     return text
 
 # Step 3: Parse Text and Save to Excel
-def text_to_excel(text, output_excel='output.xlsx'):
-    # For simplicity, we'll split the text into rows and columns by new lines and spaces
-    rows = [line.split() for line in text.splitlines() if line.strip()]
+# def text_to_excel(text, output_excel='output.xlsx'):
+#     # For simplicity, we'll split the text into rows and columns by new lines and spaces
+#     rows = [line.split() for line in text.splitlines() if line.strip()]
+    
+#     # Creating a DataFrame
+#     df = pd.DataFrame(rows)
+    
+#     # Saving to Excel
+#     df.to_excel(output_excel, index=False)
+
+import os
+from pdf2image import convert_from_path
+import pytesseract
+import pandas as pd
+import re
+
+# ... (previous functions remain unchanged)
+
+# Step 3: Parse Text and Save to Excel
+def text_to_excel(text, output_excel='page291.xlsx'):
+    # Split the text into lines
+    lines = text.splitlines()
+    
+    # Parse each line, preserving decimal numbers
+    rows = []
+    for line in lines:
+        # Use regex to split the line, keeping decimal numbers intact
+        row = re.findall(r'\d+\.\d+|\S+', line)
+        if row:
+            rows.append(row)
     
     # Creating a DataFrame
     df = pd.DataFrame(rows)
     
-    # Saving to Excel
-    df.to_excel(output_excel, index=False)
+    # Saving to Excel without changing data types
+    df.to_excel(output_excel, index=False, float_format='%.15f')
+
+# ... (rest of the code remains unchanged)
 
 # Combined Function to Convert PDF to Excel
-def pdf_to_excel(pdf_path, output_excel='output.xlsx'):
+def pdf_to_excel(pdf_path, output_excel='page291.xlsx'):
     images = pdf_to_images(pdf_path)
     full_text = ""
     for image_path in images:
@@ -43,6 +72,6 @@ def pdf_to_excel(pdf_path, output_excel='output.xlsx'):
     print(f"Excel file saved as {output_excel}")
 
 # Example Usage
-pdf_path = r"C:\Users\ZANG\OneDrive\Desktop\DataExtraction\extracted_pages.pdf"
-output_excel = 'output.xlsx'
+pdf_path = r"C:\Users\ZANG\OneDrive\Desktop\DataExtraction\extracted_page291.pdf"
+output_excel = 'page291.xlsx'
 pdf_to_excel(pdf_path, output_excel)

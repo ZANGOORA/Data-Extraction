@@ -29,6 +29,6 @@ def extract_pages(input_pdf_path, output_pdf_path, pages_to_extract):
 
 # Example usage
 input_pdf_path = r'C:\Users\ZANG\OneDrive\Desktop\DataExtraction\SolarData.pdf' # Change directory accordingly
-output_pdf_path = 'extracted_pages.pdf'
-pages_to_extract = [291, 292, 293, 294, 295, 296]  # Pages to extract (0-indexed)
+output_pdf_path = 'extracted_page291.pdf'
+pages_to_extract = [291]  # Pages to extract (0-indexed)
 extract_pages(input_pdf_path, output_pdf_path, pages_to_extract)
